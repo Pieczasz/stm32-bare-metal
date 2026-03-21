@@ -1,0 +1,188 @@
+
+Discarded input sections
+
+ .group         0x00000000        0xc /var/folders/nk/l98tnv5d2hqb8v7vwsp7lbd00000gn/T//cckxDUN9.o
+ .group         0x00000000        0xc /var/folders/nk/l98tnv5d2hqb8v7vwsp7lbd00000gn/T//cckxDUN9.o
+ .group         0x00000000        0xc /var/folders/nk/l98tnv5d2hqb8v7vwsp7lbd00000gn/T//cckxDUN9.o
+ .group         0x00000000        0xc /var/folders/nk/l98tnv5d2hqb8v7vwsp7lbd00000gn/T//cckxDUN9.o
+ .group         0x00000000        0xc /var/folders/nk/l98tnv5d2hqb8v7vwsp7lbd00000gn/T//cckxDUN9.o
+ .group         0x00000000        0xc /var/folders/nk/l98tnv5d2hqb8v7vwsp7lbd00000gn/T//cckxDUN9.o
+ .group         0x00000000        0xc /var/folders/nk/l98tnv5d2hqb8v7vwsp7lbd00000gn/T//cckxDUN9.o
+ .text          0x00000000        0x0 /var/folders/nk/l98tnv5d2hqb8v7vwsp7lbd00000gn/T//cckxDUN9.o
+ .data          0x00000000        0x0 /var/folders/nk/l98tnv5d2hqb8v7vwsp7lbd00000gn/T//cckxDUN9.o
+ .bss           0x00000000        0x0 /var/folders/nk/l98tnv5d2hqb8v7vwsp7lbd00000gn/T//cckxDUN9.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+RAM              0x20000000         0x00020000         xrw
+FLASH            0x08000000         0x00080000         xr
+*default*        0x00000000         0xffffffff
+
+Linker script and memory map
+
+LOAD /var/folders/nk/l98tnv5d2hqb8v7vwsp7lbd00000gn/T//cckxDUN9.o
+LOAD /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/libgcc.a
+                0x20020000                        _estack = 0x20020000
+                0x00000200                        _Min_Heap_Size = 0x200
+                0x00000400                        _Min_Stack_Size = 0x400
+
+.isr_vector     0x08000000      0x1ac
+                0x08000000                        . = ALIGN (0x4)
+ *(.isr_vector)
+ .isr_vector    0x08000000      0x1ac /var/folders/nk/l98tnv5d2hqb8v7vwsp7lbd00000gn/T//cckxDUN9.o
+                0x08000000                tab
+                0x080001ac                        . = ALIGN (0x4)
+
+.text           0x080001ac       0xf8
+                0x080001ac                        . = ALIGN (0x4)
+ *(.text)
+ *(.text*)
+ .text.delay    0x080001ac       0x22 /var/folders/nk/l98tnv5d2hqb8v7vwsp7lbd00000gn/T//cckxDUN9.o
+ *fill*         0x080001ce        0x2 
+ .text.main     0x080001d0       0x74 /var/folders/nk/l98tnv5d2hqb8v7vwsp7lbd00000gn/T//cckxDUN9.o
+                0x080001d0                main
+ .text.Reset_Handler
+                0x08000244       0x60 /var/folders/nk/l98tnv5d2hqb8v7vwsp7lbd00000gn/T//cckxDUN9.o
+                0x08000244                Reset_Handler
+ *(.glue_7)
+ .glue_7        0x080002a4        0x0 linker stubs
+ *(.glue_7t)
+ .glue_7t       0x080002a4        0x0 linker stubs
+ *(.eh_frame)
+ *(.init)
+ *(.fini)
+                0x080002a4                        . = ALIGN (0x4)
+                0x080002a4                        _etext = .
+
+.vfp11_veneer   0x080002a4        0x0
+ .vfp11_veneer  0x080002a4        0x0 linker stubs
+
+.v4_bx          0x080002a4        0x0
+ .v4_bx         0x080002a4        0x0 linker stubs
+
+.iplt           0x080002a4        0x0
+ .iplt          0x080002a4        0x0 /var/folders/nk/l98tnv5d2hqb8v7vwsp7lbd00000gn/T//cckxDUN9.o
+
+.rel.dyn        0x080002a4        0x0
+ .rel.iplt      0x080002a4        0x0 /var/folders/nk/l98tnv5d2hqb8v7vwsp7lbd00000gn/T//cckxDUN9.o
+
+.rodata         0x080002a4        0x0
+                0x080002a4                        . = ALIGN (0x4)
+ *(.rodata)
+ *(.rodata*)
+                0x080002a4                        . = ALIGN (0x4)
+
+.ARM.extab
+ *(.ARM.extab* .gnu.linkonce.armextab.*)
+
+.ARM            0x080002a4        0x0
+                0x080002a4                        __exidx_start = .
+ *(.ARM.exidx*)
+                0x080002a4                        __exidx_end = .
+
+.preinit_array  0x080002a4        0x0
+                [!provide]                        PROVIDE (__preinit_array_start = .)
+ *(.preinit_array*)
+                [!provide]                        PROVIDE (__preinit_array_end = .)
+
+.init_array     0x080002a4        0x0
+                [!provide]                        PROVIDE (__init_array_start = .)
+ *(SORT_BY_NAME(.init_array.*))
+ *(.init_array*)
+                [!provide]                        PROVIDE (__init_array_end = .)
+
+.fini_array     0x080002a4        0x0
+                [!provide]                        PROVIDE (__fini_array_start = .)
+ *(SORT_BY_NAME(.fini_array.*))
+ *(.fini_array*)
+                [!provide]                        PROVIDE (__fini_array_end = .)
+                0x080002a4                        _sidata = LOADADDR (.data)
+
+.data           0x20000000        0x0 load address 0x080002a4
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        _sdata = .
+ *(.data)
+ *(.data*)
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        _edata = .
+
+.igot.plt       0x20000000        0x0 load address 0x080002a4
+ .igot.plt      0x20000000        0x0 /var/folders/nk/l98tnv5d2hqb8v7vwsp7lbd00000gn/T//cckxDUN9.o
+                0x20000000                        . = ALIGN (0x4)
+
+.bss            0x20000000        0x0 load address 0x080002a4
+                0x20000000                        _sbss = .
+                0x20000000                        __bss_start__ = _sbss
+ *(.bss)
+ *(.bss*)
+ *(COMMON)
+                0x20000000                        . = ALIGN (0x4)
+                0x20000000                        _ebss = .
+                0x20000000                        __bss_end__ = _ebss
+
+._user_heap_stack
+                0x20000000      0x600 load address 0x080002a4
+                0x20000000                        . = ALIGN (0x4)
+                [!provide]                        PROVIDE (end = .)
+                [!provide]                        PROVIDE (_end = .)
+                0x20000200                        . = (. + _Min_Heap_Size)
+ *fill*         0x20000000      0x200 
+                0x20000600                        . = (. + _Min_Stack_Size)
+ *fill*         0x20000200      0x400 
+                0x20000600                        . = ALIGN (0x4)
+
+/DISCARD/
+ libc.a(*)
+ libm.a(*)
+ libgcc.a(*)
+
+.ARM.attributes
+                0x00000000       0x34
+ *(.ARM.attributes)
+ .ARM.attributes
+                0x00000000       0x34 /var/folders/nk/l98tnv5d2hqb8v7vwsp7lbd00000gn/T//cckxDUN9.o
+OUTPUT(firmware.elf elf32-littlearm)
+LOAD linker stubs
+LOAD /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libc.a
+LOAD /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/../../../../arm-none-eabi/lib/thumb/v7e-m+fp/hard/libm.a
+LOAD /Applications/ArmGNUToolchain/15.2.rel1/arm-none-eabi/bin/../lib/gcc/arm-none-eabi/15.2.1/thumb/v7e-m+fp/hard/libgcc.a
+
+.debug_info     0x00000000      0x19d
+ .debug_info    0x00000000      0x19d /var/folders/nk/l98tnv5d2hqb8v7vwsp7lbd00000gn/T//cckxDUN9.o
+
+.debug_abbrev   0x00000000      0x120
+ .debug_abbrev  0x00000000      0x120 /var/folders/nk/l98tnv5d2hqb8v7vwsp7lbd00000gn/T//cckxDUN9.o
+
+.debug_aranges  0x00000000       0x30
+ .debug_aranges
+                0x00000000       0x30 /var/folders/nk/l98tnv5d2hqb8v7vwsp7lbd00000gn/T//cckxDUN9.o
+
+.debug_rnglists
+                0x00000000       0x1f
+ .debug_rnglists
+                0x00000000       0x1f /var/folders/nk/l98tnv5d2hqb8v7vwsp7lbd00000gn/T//cckxDUN9.o
+
+.debug_macro    0x00000000      0xfc4
+ .debug_macro   0x00000000       0x93 /var/folders/nk/l98tnv5d2hqb8v7vwsp7lbd00000gn/T//cckxDUN9.o
+ .debug_macro   0x00000093      0xae4 /var/folders/nk/l98tnv5d2hqb8v7vwsp7lbd00000gn/T//cckxDUN9.o
+ .debug_macro   0x00000b77       0x22 /var/folders/nk/l98tnv5d2hqb8v7vwsp7lbd00000gn/T//cckxDUN9.o
+ .debug_macro   0x00000b99       0x8e /var/folders/nk/l98tnv5d2hqb8v7vwsp7lbd00000gn/T//cckxDUN9.o
+ .debug_macro   0x00000c27       0x51 /var/folders/nk/l98tnv5d2hqb8v7vwsp7lbd00000gn/T//cckxDUN9.o
+ .debug_macro   0x00000c78      0x103 /var/folders/nk/l98tnv5d2hqb8v7vwsp7lbd00000gn/T//cckxDUN9.o
+ .debug_macro   0x00000d7b       0x6a /var/folders/nk/l98tnv5d2hqb8v7vwsp7lbd00000gn/T//cckxDUN9.o
+ .debug_macro   0x00000de5      0x1df /var/folders/nk/l98tnv5d2hqb8v7vwsp7lbd00000gn/T//cckxDUN9.o
+
+.debug_line     0x00000000      0x28c
+ .debug_line    0x00000000      0x28c /var/folders/nk/l98tnv5d2hqb8v7vwsp7lbd00000gn/T//cckxDUN9.o
+
+.debug_str      0x00000000     0x3dbd
+ .debug_str     0x00000000     0x3dbd /var/folders/nk/l98tnv5d2hqb8v7vwsp7lbd00000gn/T//cckxDUN9.o
+                               0x3f21 (size before relaxing)
+
+.comment        0x00000000       0x45
+ .comment       0x00000000       0x45 /var/folders/nk/l98tnv5d2hqb8v7vwsp7lbd00000gn/T//cckxDUN9.o
+                                 0x46 (size before relaxing)
+
+.debug_frame    0x00000000       0x74
+ .debug_frame   0x00000000       0x74 /var/folders/nk/l98tnv5d2hqb8v7vwsp7lbd00000gn/T//cckxDUN9.o
