@@ -5,12 +5,18 @@ SIZE   := $(PREFIX)size
 
 CFLAGS ?= -W -Wall -Wextra -Werror -Wundef -Wshadow -Wdouble-promotion \
 	-Wformat-truncation -fno-common -Wconversion \
-	-g3 -O0 -ffunction-sections -fdata-sections -I. \
+	-g3 -O0 -ffunction-sections -fdata-sections -Iinclude -Ibsp -I. \
 	-mcpu=cortex-m4 -mthumb -mfloat-abi=hard -mfpu=fpv4-sp-d16 $(EXTRA_CFLAGS)
 
 LDFLAGS ?= -Tf411.ld -nostartfiles -nostdlib -Wl,--gc-sections -Wl,-Map=firmware.map -lgcc
 
-SOURCES := main.c
+SOURCES := \
+	src/startup.c \
+	src/main.c \
+	src/rcc.c \
+	src/gpio.c \
+	src/systick.c \
+	bsp/bsp_led.c
 
 all: firmware.bin
 
